@@ -40,25 +40,25 @@ namespace im
 
 namespace au
 {
-  struct audio
-  {
-    inline audio(const std::string& filename)
+    struct audio
     {
-      std::ifstream fin(filename, std::ios::binary);
-      m_buffer << fin.rdbuf();
-    }
-    
-    std::stringstream m_buffer;
-  };
+        inline audio(const std::string& filename)
+        {
+            std::ifstream fin(filename, std::ios::binary);
+            m_buffer << fin.rdbuf();
+        }
+        
+        std::stringstream m_buffer;
+    };
   
-  xeus::xjson mime_bundle_repr(const audio& a)
-  {
-    auto bundle = xeus::xjson::object();
-    bundle["text/html"] =
-    std::string("<audio controls=\"controls\"><source src=\"data:audio/wav;base64,")
-    + xtl::base64encode(a.m_buffer.str()) +
-    "\" type=\"audio/wav\" /></audio>";
-    return bundle;
-  }
+    xeus::xjson mime_bundle_repr(const audio& a)
+    {
+        auto bundle = xeus::xjson::object();
+        bundle["text/html"] =
+        std::string("<audio controls=\"controls\"><source src=\"data:audio/wav;base64,")
+        + xtl::base64encode(a.m_buffer.str()) +
+        "\" type=\"audio/wav\" /></audio>";
+        return bundle;
+    }
 }
 
