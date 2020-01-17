@@ -1,5 +1,9 @@
+#pragma cling add_include_path("/srv/conda/envs/notebook/include/python3.7m")
+#pragma cling add_library_path("/srv/conda/envs/notebook/lib")
+
 #pragma cling add_include_path("/usr/local/include/python3.7m")
 #pragma cling add_library_path("/usr/local/lib")
+
 #pragma cling load("python3.7m")
 
 #define WITHOUT_NUMPY 1
