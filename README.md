@@ -11,6 +11,7 @@ also uses the [ICST DSP library](https://www.zhdk.ch/en/research/icst/software-d
 
 ## how to run it
 * install [docker desktop](https://www.docker.com)
+* using a terminal, or git-bash mingw-64 terminal on windows
 * `git clone --recursive https://github.com/olilarkin/XeusClingMatplotLibExample`
 * `cd XeusClingMatplotLibExample`
-* `docker run -it --rm --mount type=bind,source="$(pwd)",target=/work -p 8888:8888 olilarkin/xeus-cling-mpl`
+* `./launch-notebook.sh`
