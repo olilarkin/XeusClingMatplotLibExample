@@ -1,0 +1,9 @@
+name: XeusClingMatplotLibExample
+channels:
+  - conda-forge
+dependencies:
+  - xeus-cling
+  - matplotlib
+  - cmake
+  - python=3.7
+
